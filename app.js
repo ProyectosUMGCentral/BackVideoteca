@@ -57,6 +57,16 @@ app.use(helmet())
 // Prevent XSS attacks
 app.use(xss())
 
+
+// Desactivar COEP
+app.use((req, res, next) => {
+	res.set('Cross-Origin-Embedder-Policy', 'unsafe-none');
+	res.set('Cross-Origin-Opener-Policy', 'unsafe-none');
+	res.set('Cross-Origin-Resource-Policy', 'unsafe-none');
+	next();
+  });
+  
+
 // Enable CORS
 app.use(cors())
 
