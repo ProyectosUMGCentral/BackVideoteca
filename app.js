@@ -30,6 +30,7 @@ const feelingRoutes = require('./routes/feelings')
 const subscriptionRoutes = require('./routes/subscriptions')
 const historiesRoutes = require('./routes/histories')
 const searchRoutes = require('./routes/search')
+const playlistRoutes = require('./routes/playlist')
 
 const app = express()
 
@@ -101,6 +102,7 @@ app.use(versionOne('feelings'), feelingRoutes)
 app.use(versionOne('subscriptions'), subscriptionRoutes)
 app.use(versionOne('histories'), historiesRoutes)
 app.use(versionOne('search'), searchRoutes)
+app.use(versionOne('playlist'), playlistRoutes)
 
 app.use(errorHandler)
 
